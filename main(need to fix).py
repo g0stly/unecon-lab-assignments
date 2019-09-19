@@ -3,7 +3,7 @@ import time
 
 
 class Clock:
-
+    # подумать, куда засунуть исходное время(списать у )
     current_time = '23:00'
 
     def __init__(self):
@@ -24,7 +24,11 @@ class Clock:
 
         self.clk_label.after_idle(self.tick(1))
         tkinter.mainloop()
-
+    
+    # переписать две эти функции
+    # добавить аргумент, который, в зависимости от значения, запускает рекурсию или не запускает
+    # 
+    
     def tick(self, incr=1):
         # впоследствии поменять время обновления на 60*10^3 и убрать секунды (+ изменить ширину окна)
         #global Clock.current_time
