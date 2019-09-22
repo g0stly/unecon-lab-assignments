@@ -6,7 +6,9 @@ class Clock:
 
     def __init__(self):
 
-        self.mode = 1
+        self.mode = 0
+        self.alarm_time = None
+        self.stop_time = None
         self.init_time = datetime.strftime(datetime.now(), '%H:%M')
 
         self.main_window = tkinter.Tk()
@@ -19,7 +21,7 @@ class Clock:
 
         self.h_btn = tkinter.Button(self.main_window, bg='Misty Rose', text='H', command=lambda: self.lbl_config(60))
         self.m_btn = tkinter.Button(self.main_window, bg='Misty Rose', text='M', command=lambda: self.lbl_config(1))
-        self.a_btn = tkinter.Button(self.main_window, bg='Misty Rose', text='A')
+        self.a_btn = tkinter.Button(self.main_window, bg='Misty Rose', text='A', command=self.alarm)
 
         self.h_btn.grid(row=1, column=0, sticky='ew')
         self.m_btn.grid(row=1, column=1, sticky='ew')
@@ -43,6 +45,17 @@ class Clock:
                              str(datetime.strptime(self.init_time[3:], '%M') + timedelta(minutes=delta))[13:16]
 
         self.clk_label.config(text=self.init_time)
+
+    def alarm(self):
+
+        if self.mode == 0:
+            self.stop_time = self.init_time
+            self.mode = 1
+        else:
+            self.alarm_time = self.init_time
+            self.clk_label.config(text=self.stop_time)
+            self.stop_time = None
+            self.mode = 0
 
 
 if __name__ == '__main__':
