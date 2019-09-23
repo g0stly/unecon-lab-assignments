@@ -1,6 +1,8 @@
 import tkinter
+from tkinter import messagebox
 from winsound import *
 from datetime import *
+from PIL import Image, ImageTk
 
 
 class Clock:
@@ -17,8 +19,12 @@ class Clock:
         self.main_window.title('digital clock')
         self.main_window.resizable(False, False)
 
+        #load = Image.open(
+        # 'C:\\Users\\busya\\PycharmProjects\\питоню\\1 - по универу\\лаба 1 (гэу - 2019)\\design\\bg1.jpg')
+        #render = ImageTk.PhotoImage(load)
+
         self.clk_label = tkinter.Label(self.main_window, width=6, font=('Ubuntu', 95),
-                                       bg='light cyan', text=self.init_time)
+                                       bg='light cyan', text=self.init_time)#, image=render)
         self.clk_label.grid(row=0, columnspan=3)
 
         self.h_btn = tkinter.Button(self.main_window, bg='Misty Rose', text='H', command=lambda: self.lbl_config(60))
@@ -65,6 +71,7 @@ class Clock:
             self.init_time = self.stop_time
             self.clk_label.config(text=self.init_time)
             self.mode = 'clock'
+            messagebox.showinfo('info', f'The alarm was set for {self.alarm_time}')
 
 
 def wake_up():
