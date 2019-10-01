@@ -12,7 +12,7 @@ class Clock:
         self.alarm_time = []
         self.stop_time = None
         self.init_time = datetime.strftime(datetime.now(), '%H:%M')
-        self.launch = True  # костыль: чтобы лишняя минута не накидывалась сходу после запуска (срабатывает after_idle)
+        self.launch = True  # ГЄГ®Г±ГІГ»Г«Гј: Г·ГІГ®ГЎГ» Г«ГЁГёГ­ГїГї Г¬ГЁГ­ГіГІГ  Г­ГҐ Г­Г ГЄГЁГ¤Г»ГўГ Г«Г Г±Гј Г±ГµГ®Г¤Гі ГЇГ®Г±Г«ГҐ Г§Г ГЇГіГ±ГЄГ  (Г±Г°Г ГЎГ ГІГ»ГўГ ГҐГІ after_idle)
 
         self.height = 237
         self.width = 430
@@ -26,8 +26,8 @@ class Clock:
         self.canvas = tkinter.Canvas(self.main_window, height=self.height, width=self.width)
         self.canvas.pack()
 
-        # здесь указать путь к файлу с задним фоном
-        self.path = 'C:\\Users\\busya\\PycharmProjects\\питоню\\1 - по универу\\лаба 1 (гэу - 2019)\\design\\bg1.jpg'
+        # Г§Г¤ГҐГ±Гј ГіГЄГ Г§Г ГІГј ГЇГіГІГј ГЄ ГґГ Г©Г«Гі Г± Г§Г Г¤Г­ГЁГ¬ ГґГ®Г­Г®Г¬
+        self.path = 'C:\\Users\\busya\\PycharmProjects\\ГЇГЁГІГ®Г­Гѕ\\1 - ГЇГ® ГіГ­ГЁГўГҐГ°Гі\\Г«Г ГЎГ  1 (ГЈГЅГі - 2019)\\design\\bg1.jpg'
         self.background_image = ImageTk.PhotoImage(Image.open(self.path))
         self.background_label = tkinter.Label(self.main_window, image=self.background_image)
         self.background_label.place(x=0, y=0, relheight=1, relwidth=1)
@@ -99,8 +99,8 @@ class Clock:
     def wake_up(self):
 
         mixer.init()
-        # здесь указать путь к файлу со звуком будильника
-        filename = r'C:\Users\busya\PycharmProjects\питоню\1 - по универу\лаба 1 (гэу - 2019)\music.wav'
+        # Г§Г¤ГҐГ±Гј ГіГЄГ Г§Г ГІГј ГЇГіГІГј ГЄ ГґГ Г©Г«Гі Г±Г® Г§ГўГіГЄГ®Г¬ ГЎГіГ¤ГЁГ«ГјГ­ГЁГЄГ 
+        filename = r'C:\Users\busya\PycharmProjects\ГЇГЁГІГ®Г­Гѕ\1 - ГЇГ® ГіГ­ГЁГўГҐГ°Гі\Г«Г ГЎГ  1 (ГЈГЅГі - 2019)\music.wav'
         mixer.music.load(filename)
         mixer.music.play()
         mixer.music.set_volume(0.3)
