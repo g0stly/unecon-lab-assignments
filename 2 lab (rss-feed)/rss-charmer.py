@@ -9,7 +9,7 @@ import pymorphy2
 import time
 
 
-token = '980878523:AAEUYxMijMvEJTuS55crcbQc10JLbF_ApM4'
+token = 'ваш токен'
 bot = telebot.TeleBot(token)
 last_click = None
 
