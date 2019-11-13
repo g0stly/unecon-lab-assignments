@@ -5,7 +5,7 @@ from decoration import *
 from configuration import *
 from processing import *
 
-token = '980878523:AAEUYxMijMvEJTuS55crcbQc10JLbF_ApM4'
+token = ''
 bot = telebot.TeleBot(token)
 
 wait_for_category = False
