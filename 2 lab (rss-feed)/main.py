@@ -5,7 +5,7 @@ from decoration import *
 from configuration import *
 from processing import *
 
-token = '980878523:AAEUYxMijMvEJTuS55crcbQc10JLbF_ApM4'
+token = ''
 bot = telebot.TeleBot(token)
 
 wait_for_category = False
@@ -116,7 +116,7 @@ def send_message(message):
         if ans == 1:
             bot.send_message(message.chat.id, 'новая лента добавлена.')
         else:
-            bot.send_message(message.chat.id, 'какие-то временные шоколадки с добавлением твоей ленты')
+            bot.send_message(message.chat.id, 'какие-то временные технические шоколадки с добавлением твоей ленты')
     else:
 
         if wait_for_category:
